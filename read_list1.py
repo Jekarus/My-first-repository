@@ -7,7 +7,6 @@ def read():
     cur = base.cursor()
     r = cur.execute('SELECT * FROM akk').fetchall() # считываем все данные с файла sqlite
     for row in r:   # отображение данных в меню
-        # total += 1  # счетчик количества аккаунтов в базе
         print("Ид: ", row[0])   # считывание столбца
         print("Имя аккаунта: ", row[1])
         print("Логин: ", row[2])
