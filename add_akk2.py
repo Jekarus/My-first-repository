@@ -29,6 +29,8 @@ def add():
         if password == '':
             password = input("Введите пароль аккаунта: ")
             print("Ошибка ввода")
+        else:
+            print("Пароль принят")
         # NULL - не передаем значение столбу id, значение создается автоматически (Id INTEGER PRIMARY KEY)
     cur.execute("INSERT INTO akk VALUES(NULL, ?, ?, ?);", (web, login, password))   # добавляем данные в БД
 
