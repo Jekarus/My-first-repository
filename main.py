@@ -2,9 +2,8 @@ import sqlite3
 import read_list1
 import add_akk2
 import file3
+
 """ Приложение Записная книжка 1.0  """
-
-
 
 def data_base():
     """
@@ -31,22 +30,34 @@ def menu():
     while choice != '4':
         print(
             """
-                Записная Книга 1.0
-            1. Список
-            2. Добавить аккаунт
-            3. Изменить аккаунт
-            4. Выход
+                xxxxxxxxxxxxxxxxxxxxxxxxxx
+                x                        x
+                x  Записная Книга v.1.1  x
+                x                        x
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x                                x
+            x         Меню:                  x
+            x       1. Список                x
+            x       2. Добавить аккаунт      x
+            x       3. Изменить аккаунт      x
+            x       4. Выход                 x
+            x                                x 
+            x                                x
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            
             """
         )
         choice = input("Выберите пункт меню: ")
         print()
         if choice == '1':
             read_list1.read()
-        if choice == '2':
+        elif choice == '2':
             add_akk2.add()
-        if choice == '3':
+        elif choice == '3':
             file3.chak()
-        if choice == '4':
+        elif choice == '4':
             print("Завершение программы")
+        else:
+            print("Нет такого меню!")
 menu()
 

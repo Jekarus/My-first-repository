@@ -8,11 +8,20 @@ def chak():
     while cho != '3':
         print(
             """
-                Меню: Изменить аккаунт
-            1. Изменить логин и пароль аккаунта
-            2. Удалить аккаунт
-            3. Вернуться в предыдущее меню
-            
+                xxxxxxxxxxxxxxxxxxxxxxxxxx
+                x                        x
+                x  Записная Книга v.1.1  x
+                x                        x
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x                                x
+            x     Меню: Изменить аккаунт     x
+            x  1. Изм. логин и пароль акк.   x
+            x  2. Удалить акк.               x
+            x  3. Вернуться в пред. меню     x
+            x                                x 
+            x                                x
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+           
             """
         )
         cho = input("Выберите пункт меню: ")
@@ -35,7 +44,7 @@ def chak():
 
             return 3    # Возврат 3 переменной cho, для выхода в основное меню
 
-        if cho == '2':
+        elif cho == '2':
             """ Удаление аккаунта по id"""
             base = sqlite3.connect('data_akk.db')
             cur = base.cursor()
@@ -49,5 +58,7 @@ def chak():
             cur.close()
 
             return 3    # Возврат 3 переменной cho, для выхода в основное меню
-
+        else:
+            print("Нет такого меню!")
+            print("Попробуй еще раз.")
 
