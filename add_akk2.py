@@ -6,9 +6,6 @@ import sqlite3
 def add():
     base = sqlite3.connect('data_akk.db')
     cur = base.cursor()
-    web = ''
-    login = ''
-    password = ''
     web = input("Введите название аккаунта: ")
     while web == '':
         if web == '':
