@@ -1,18 +1,19 @@
 import sqlite3
+from login_player import *
 
-# добавление аккаунта
 
-def read():
-    base = sqlite3.connect('data_akk.db')
+def read(user):
+    base = sqlite3.connect(user + '.db')
     cur = base.cursor()
-    r = cur.execute('SELECT * FROM akk').fetchall() # считываем все данные с файла sqlite
-    total = []  # список/счетчик количества аккаунтов
+    r = cur.execute('SELECT * FROM akk').fetchall()     # считываем все данные с файла sqlite
+    total = 1
     for row in r:   # отображение данных в меню
-        print("Ид: ", row[0])   # считывание столбца
-        print("Имя аккаунта: ", row[1])
-        print("Логин: ", row[2])
-        print("Пароль: ", row[3])
-        total.append(row[0])    # добавляем количество аккаунтов в список по id
+        print("Аккаунт №:", total)
+        print("Имя аккаунта: ", row[0])
+        print("Логин: ", row[1])
+        print("Пароль: ", row[2])
+        total += 1
         print("--------------------------------")
+    print("Всего аккаунтов в базе: ", total - 1)
 
-    print("Всего аккаунтов в базе: ", total[-1])
+

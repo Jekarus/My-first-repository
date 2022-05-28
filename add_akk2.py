@@ -1,10 +1,10 @@
 import sqlite3
-
+from login_player import *
 
 # добавление аккаунта
 
-def add():
-    base = sqlite3.connect('data_akk.db')
+def add(user):
+    base = sqlite3.connect(user + '.db')
     cur = base.cursor()
     web = input("Введите название аккаунта: ")
     while web == '':
@@ -29,7 +29,7 @@ def add():
         else:
             print("Пароль принят")
         # NULL - не передаем значение столбу id, значение создается автоматически (Id INTEGER PRIMARY KEY)
-    cur.execute("INSERT INTO akk VALUES(NULL, ?, ?, ?);", (web, login, password))   # добавляем данные в БД
+    cur.execute("INSERT INTO akk VALUES(?, ?, ?);", (web, login, password))   # добавляем данные в БД
 
     base.commit()   # сохраняем бд
 
